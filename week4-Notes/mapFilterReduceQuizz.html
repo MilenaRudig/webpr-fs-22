@@ -21,6 +21,7 @@
     // provide a function (or lambda expression) named
     // 'divides' such that [1,2,3,4,5,6].filter(divides(3)) equals [3,6]
     const divides = x => y => y%x === 0;
+
     //Test
     [1,2,3,4,5,6].filter(divides(3)).toString() === "3,6";
     document.writeln([1,2,3,4,5,6].filter(divides(3)).toString() === "3,6");
@@ -30,14 +31,39 @@
     document.writeln("Q9f:");
     // provide a function (or lambda expression) named
     // 'join' such that [1,2,3].reduce(join('-')) equals '1-2-3'
-    const join = (accu, cur) => x => accu + x + cur;
+    const join = k => (accu, cur)  =>  accu + k + cur.toString();
 
     //Test
     //[1,2,3].reduce(join('-')) === '1-2-3';
-    //[1,2,3].reduce(join(x)) === '1-2-3';
+
+    // document.writeln([1,2,3].reduce(join) === 6); --> true
+    // document.writeln([1,2,3].reduce(join));
+    // document.writeln([1,2,3].reduce(join) === '123'); --> true
     document.writeln([1,2,3].reduce(join('-')));
     document.writeln([1,2,3].reduce(join('-')) === '1-2-3');
+
+    //######### HOMEWORK #######
+    document.writeln("HOMEWORK");
+    const preOrder = (acc, cur) => {
+        acc.unshift(cur)
+        return acc;
+   };
+    document.writeln(preOrder);
+
+    //test
+    document.writeln([1,2,3].reduce(preOrder, []));
+    document.writeln([1,2,3].reduce(preOrder, []) === [3,2,1]);
 
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
