@@ -5,15 +5,50 @@
     <title>All Tests</title>
 </head>
 <body>
+<!--   alw -->
+    <script>
+        // const test = [
+        //     "function",
+        //     "lamnda",
+        //     "snake"
+        // ] better:
+        <!--   SOP = same origen policy - so it is not allowed to ti this. but here we kind of hack the browser -->
+        //  [
+        //     "function",
+        //     "lamnda",
+        //     "snake"
+        // ].forEache( test => console.log(test));
 
-    <script src="function/function.js"></script>
-    <script src="function/functionTest.js"></script>
+         // the following does not work, because we are ending the script tag alread in the string!
+         //document.writeln('<script src="function/function.js">< /script>');
+        // the trick is: break it apart and combine it! with ''+''
+         //document.writeln('<script src="function/function.js"><'+'/script>');
+         // now it works! we kind of broke the browser - wir sind SOP umgangen
+        // this way we could read the file system what is not allowed usually
 
-    <script src="lambda/lambda.js"></script>
-    <script src="lambda/lambdaTest.js"></script>
+        [
+            "function",
+            "lamnda",
+            "snake"
+        ].forEach( test => {
+            document.writeln('<script src="${name}/${name}.js"><'+'/script>');
+            document.writeln('<script src="${name}/${name}Test.js"><'+'/script>');
 
-    <script src="snake/snake.js"></script>
-    <script src="snake/snakeTest.js"></script>
+        });
+
+        //todo Compare with his solution, because its not woring yet!!!
+
+    </script>
+<!-- ALWAYS START WITH THE STATIC REPRESENTATION AND AFTERWARDS GO TO DYamic! -->
+<!--   SOP = same origen policy - so it is not allowed to ti this. but here we kind of hack the browser -->
+<!--    <script src="function/function.js"></script>-->
+<!--    <script src="function/functionTest.js"></script>-->
+
+<!--    <script src="lambda/lambda.js"></script>-->
+<!--    <script src="lambda/lambdaTest.js"></script>-->
+
+<!--    <script src="snake/snake.js"></script>-->
+<!--    <script src="snake/snakeTest.js"></script>-->
 
 
 </body>
