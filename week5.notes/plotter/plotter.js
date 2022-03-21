@@ -8,7 +8,18 @@ function start() {
     const userFunction = document.getElementById('user_function');
     const canvas       = document.getElementById('canvas');
 
-    // todo: how to display?
+    // how to display?
+    //display(canvas, x => eval(userFunction) ); //doesn't work
+    //display(canvas, x => Math.sin(x) ); // try out with using the funciton it slef
+   //display(canvas, x => eval('Math.sin(x)' )); // using with eval
+    //display(canvas, x => eval(userFunction.value )); //is called x times
+    //const f = Function("x","return " + userFunction.value) + ";"; // introduce the Function to avoid using eval
+    const makeF = () => Function("x","return " + userFunction.value + ";"); // f has tu be changeble in the listener onchenge
+
+    userFunction.onchange = _ => display(canvas, makeF()); //_ sag nichts machechen
+    //display(canvas, x => f(x)); //apply eta reduction
+    //display(canvas, f); //apply eta reduction
+    display(canvas, makeF()); // use now makeF() to use the lsitener above
 
 }
 
