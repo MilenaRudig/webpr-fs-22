@@ -1,5 +1,6 @@
 
 const Formulae =  {
+    // the layout can help readability
     A1: '1',             B1: '1',              C1: 'n(A1) + n(B1)',
     A2: '2',             B2: '2',              C2: 'n(A2) + n(B2)',
     A3: 'n(A1) + n(A2)', B3: 'n(B1) + n(B2)',  C3: 'n(C1) + n(C2)',

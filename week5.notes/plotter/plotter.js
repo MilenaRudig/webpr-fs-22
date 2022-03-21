@@ -19,7 +19,7 @@ function start() {
     userFunction.onchange = _ => display(canvas, makeF()); //_ sag nichts machechen
     //display(canvas, x => f(x)); //apply eta reduction
     //display(canvas, f); //apply eta reduction
-    display(canvas, makeF()); // use now makeF() to use the lsitener above
+    display(canvas, makeF()); // use now makeF() to use the listener above
 
 }
 
