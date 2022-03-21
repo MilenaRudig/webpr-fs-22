@@ -8,19 +8,54 @@
 <script>
 
     document.writeln("Q10a:");
+    // your user has entered a new business rule on how to calculate
+    // this year's bonuses. He entered a formula through a web from and
+    // it is available through the _string_ variable 'bonusFormula'.
+    // The formula refers to the employee as 'employee' like in
+    // 'employee.bonus = employee.revenue * 0,2'
+    //
+    // Provide a function ( or lambda expression) named 'bonusCalculation'
+    // that calculates an employee's bonus by using the user-provided bonusFormula.
+    //
+    // do _NOT_ use the "Function" class!!!
+
+    // id= employee; value
+
+    const bonusCalculation = x => eval(bonusFromula.value);
 
 
     //Test
+    const e = {revenue: 10000, bonus: null};
+    bonusCalculation(e);
+    e.bonus === e.revenue * factor_;
 
-    document.writeln( );
+    document.writeln(e.bonus === e.revenue * factor_);
 
     //######### Q10b #######
     document.writeln("Q10b:");
+    // your user has entered a new business rule on how to calculate
+    // this year's bonuses. He entered a formula through a web from and
+    // it is available through the _string_ variable 'bonusFormula'.
+    // The formula refers to the employee as 'employee' like in
+    // 'employee.bonus = employee.revenue * 0,2'
+    // ( note that this only calculates but does not set the bonus)
+    //
+    // Provide a function ( or lambda expression) named 'bonusCalculation'
+    // that calculates an employee's bonus by using the user-provided bonusFormula.
+    //
+    // Since we will give bonuses to many employees, do _NOT_ use the 'eval' function
+    // and do _NOT_ use side effects like setting surrounding variables.
+
+    const bonusCalculation_2 = Function("x","return " + bonusFromula.value +";");
 
 
     //Test
 
-    document.writeln();
+    const b = {revenue: 10000, bonus: null};
+    bonusCalculation_2(b);
+    b.bonus === b.revenue * factor_;
+
+    document.writeln(b.bonus === b.revenue * factor_);
 
     //######### Q11 #######
 
